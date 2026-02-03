@@ -6,7 +6,8 @@ url: "https://maker-nathan.dev"
 baseurl: ""
 
 # Theme
-theme: minimal-mistakes-jekyll
+# theme: minimal-mistakes-jekyll
+remote_theme: mmistakes/minimal-mistakes@4.27.0
 minimal_mistakes_skin: "default"
 
 # Author
@@ -52,6 +53,7 @@ plugins:
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache
+  - jekyll-remote-theme
 
 # Pagination
 paginate: 5
