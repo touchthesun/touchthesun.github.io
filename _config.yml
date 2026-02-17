@@ -32,6 +32,12 @@ collections:
     output: true
     permalink: /:collection/:path/
 
+minimal_mistakes_skin: "dark"
+
+include:
+  - _pages
+  - _portfolio
+
 # Defaults
 defaults:
   - scope:
