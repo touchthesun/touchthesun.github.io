@@ -54,12 +54,9 @@ defaults:
 
 # Plugins
 plugins:
-  - jekyll-paginate
   - jekyll-sitemap
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
 
-# Pagination
-paginate: 5
-paginate_path: /page:num/
+# Homepage uses splash layout (index.md); blog lists posts without paginator.

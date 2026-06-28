@@ -81,10 +81,10 @@ FastAPI | Rich CLI | GPG | Dangerzone | ExifTool | Tor | OnionShare
 
 **Beta Testing** - Active development, seeking feedback from journalists and security researchers.
 
-[View Documentation](#) | [GitHub Repository](#)
+**Documentation:** In-depth service docs ship with the beta for participants (this portfolio page is the public overview). **Source:** The repository is private during beta; if you are a journalist collaborator, security researcher, or institution evaluating deployment, [email me](mailto:nathan@makernet.work).
 
 ---
 
 **For Journalists:** Interested in beta testing? Contact me.  
-**For Developers:** Contributions welcome on GitHub.  
+**For Developers:** Contributions welcome once collaboration agreements are in place—[email](mailto:nathan@makernet.work) to start that conversation.  
 **For Organizations:** Institutional deployment and security audit inquiries welcome.

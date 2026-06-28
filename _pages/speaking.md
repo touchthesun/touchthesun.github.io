@@ -11,20 +11,16 @@ More recently my speaking has expanded into AI systems design, security in agent
 
 ---
 
-## Upcoming
+## Previous Talks
 
 ### Open Hardware Summit 2026
 **Berlin, Germany · May 2026**
 
-*Supply Chain Mesh Networks: Open Infrastructure for Manufacturing Resilience*
+*Building Supply Chain Mesh Networks: Open Infrastructure for Resilient Manufacturing*
 
 When centralized supply chains collapse, distributed manufacturing capacity exists but lacks coordination infrastructure. During COVID-19, 1,800+ maker organizations produced 48 million medical supply units - but 70% of volunteer effort went to manual coordination rather than production. This talk presents working open-source tools that solve that coordination problem, and outlines concrete pathways for technical and policy participation.
 
-[Open Hardware Summit 2026](https://2026.oshwa.org/)
-
----
-
-## Previous Talks
+[Watch on YouTube →](https://www.youtube.com/watch?v=Lr21NQtMSUc)
 
 ### Global Innovation Gathering
 **2018 / 2019**

@@ -1,6 +1,7 @@
 ---
 title: "Production AI Systems"
 excerpt: "Enterprise GenAI Solutions"
+permalink: /portfolio/ai-systems/
 header:
   teaser: /assets/images/ai-thumb.jpg
 ---
@@ -9,6 +10,32 @@ header:
 ## Enterprise GenAI Solutions
 
 Translating AI research into production value at scale.
+
+## Case studies (anonymized)
+
+### B2B SaaS: churn and save teams
+
+**Problem:** A growing SaaS provider was losing mid-market accounts to silent churn; Customer Success was reactive, and leadership lacked early warning signals tied to product usage and support history.
+
+**Approach:** Built an ML-based churn risk model with explainable drivers, integrated into the CRM and CS playbooks, plus lightweight automation for outreach and escalation. Emphasized evaluation rigor (holdouts, calibration, fairness checks) and human-in-the-loop workflows so teams trusted the system.
+
+**Outcome:** Roughly **23% reduction in preventable churn** over the measurement window; CS shifted capacity from firefighting to high-touch saves on accounts the model surfaced early.
+
+### Multi-tenant analytics: executive MCP-style access
+
+**Problem:** Executives needed consolidated KPIs across siloed data stores without standing up another brittle ETL project or exposing raw warehouse access.
+
+**Approach:** Designed API-first “tool surfaces” (MCP-style patterns) over governed metrics layers, with caching, rate limits, and role-based scopes. Prioritized latency and cost controls for **500K+ queries/day** at peak.
+
+**Outcome:** Self-serve leadership reporting with stable p95 latency; reduced ad-hoc analyst load and improved consistency of definitions across teams.
+
+### Healthcare: HIPAA-aware voice workflows
+
+**Problem:** A clinical network needed phone-based intake and follow-up that reduced admin burden without creating PHI handling gaps or unreliable handoffs to staff.
+
+**Approach:** HIPAA-conscious architecture: least-privilege access, encrypted transit and storage, audit logging, human escalation paths, and disciplined prompt/guardrail testing for common failure modes. Voice pipeline with ASR/NLU and structured handoff to EHR-adjacent systems.
+
+**Outcome:** **1,000+ patient conversations per week** at steady state with **~94% task-completion accuracy** on scoped workflows; measurable reduction in manual scheduling and callback workload.
 
 ## Overview
 
@@ -54,7 +81,7 @@ HIPAA-compliant conversational AI handling 1,000+ patient interactions weekly wi
 Founded and lead GenAI Community of Practice at DoIT (40+ members):
 - Weekly technical workshops on AI security, threat modeling, prompt injection defense
 - Mentorship program that upskilled 15 colleagues in AI engineering
-- Internal training materials now used company-wide
+- Training materials (agents, embeddings, explainability strategies) published openly at [gitlab.com/maker-nathan/ai-training-and-threat-modeling](https://gitlab.com/maker-nathan/ai-training-and-threat-modeling)
 
 ## Tech Stack
 

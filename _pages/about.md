@@ -41,7 +41,7 @@ I believe we already have most of the tools we need to solve most of the problem
 
 I am constitutionally bad at it. I am told this is something to work on.
 
-What I can tell you is that I do the work regardless of whether anyone is watching, I write documentation because I think other people's time matters, and I build things I believe in even when there's no business case for doing so. If that sounds like someone you'd want to work with, my contact information is below.
+What I can tell you is that I do the work regardless of whether anyone is watching, I write documentation because I think other people's time matters, and I build things I believe in even when there's no business case for doing so. If that sounds like someone you'd want to work with, see **[Contact & availability](/contact/)** or the links below.
 
 ---
 

@@ -67,9 +67,9 @@ REST API, CLI tool (`ohm` command), Python library - 27 services across 7 comman
 
 ## Current Status & Impact
 
-**Built and Seeking Adoption**
+**Published and Seeking Adoption**
 
-The system is complete and functional. Standards are published. Now focused on adoption through conference presentations, documentation, and community building.
+The system is complete and functional. Standards are published. OHM v0.8.4 is available on Docker Hub ([touchthesun/openhardwaremanager](https://hub.docker.com/r/touchthesun/openhardwaremanager)) with multi-architecture images (linux/amd64 and linux/arm64). Now focused on adoption through conference presentations, documentation, and community building.
 
 **Why This Matters:**
 
@@ -99,8 +99,7 @@ The infrastructure exists now. The coordination layer is being built. The next c
 
 ## Get Involved
 
-**For Developers:** [Contribute on GitHub](#) | [Implement OKH/OKW in your tools](#)  
-**For Makers:** [Publish facility capabilities](#) | [Adopt OKH in projects](#)  
-**For Organizations:** [Standards adoption](#) | [Network formation](#)
+**For Developers:** [Contribute on GitHub](https://github.com/helpfulengineering/supply-graph-ai) — reference implementation for OpenKnowHow / OpenKnowWhere-style coordination.  
+**For makers & organizations:** Context and community pathways through the [Open Source Hardware Association](https://www.oshwa.org/), [Internet of Production Alliance](https://internetofproduction.org/), and [Field Ready](https://fieldready.org/).
 
 Open Source (MIT) | Maintained by Nathan Parker

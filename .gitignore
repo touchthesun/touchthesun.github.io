@@ -2,3 +2,9 @@ _site
 .sass-cache
 .jekyll-metadata
 Gemfile.lock
+.DS_Store
+
+# development files
+notes/
+.claude/
+claude.md
