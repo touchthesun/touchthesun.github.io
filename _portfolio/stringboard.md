@@ -61,11 +61,11 @@ First investigative tool to safely integrate AI assistance through privacy-prese
 
 **Origin Story:**
 
-Inspired by Micah Lee's excellent book teaching journalists technical skills, but recognizing most reporters still face insurmountable barriers. Stringboard makes those techniques accessible without requiring a CS degree.
+Inspired by Micah Lee's book teaching journalists technical skills, but recognizing most reporters still face insurmountable barriers. Stringboard makes those techniques accessible without requiring a CS degree.
 
 **The Mission:**
 
-As stories are increasingly hidden in vast quantities of data, journalists shouldn't need to become data scientists to find them. This tool lowers barriers to high-quality data-driven journalism while protecting those who risk everything to expose truth.
+As stories are increasingly hidden in enormous datasets, journalists shouldn't need to become data scientists to find them. This tool lowers barriers to high-quality data-driven journalism while protecting those who risk everything to expose truth.
 
 ## Technical Stack
 

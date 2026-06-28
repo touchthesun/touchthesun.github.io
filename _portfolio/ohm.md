@@ -28,7 +28,7 @@ The next pandemic, natural disaster, or supply chain disruption will find us jus
 
 Over three years, I co-developed machine-readable standards for open hardware (OpenKnowHow for designs, OpenKnowWhere for facilities) with the Open Source Hardware Association, Field Ready, and the University of Bath. But standards alone don't solve anything - nobody will manually implement a data standard.
 
-So I built the Open Hardware Manager: the reference implementation that makes these standards actually useful.
+The Open Hardware Manager is the reference implementation that makes these standards actually useful.
 
 ## Core Capabilities
 

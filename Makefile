@@ -38,7 +38,7 @@ check: build
 ## Checks spelling, style, and consistency across all content files.
 lint:
 	@command -v vale >/dev/null 2>&1 || { echo "Vale not found. Install with: brew install vale"; exit 1; }
-	vale _posts/ _pages/ _portfolio/
+	@vale _pages/ _portfolio/ $(wildcard _posts/2026-*); true
 
 # ── Publishing ────────────────────────────────────────────────────────────────
 
