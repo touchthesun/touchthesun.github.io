@@ -10,7 +10,7 @@ feature_row:
   - image_path: /assets/images/stringboard-thumb.jpg
     alt: "Stringboard"
     title: "Stringboard"
-    excerpt: "Secure investigative journalism toolkit with privacy-preserving AI agents. 27 services, 42,639 LOC, beta testing with journalists."
+    excerpt: "Local-first platform for data journalism. Journalists get AI-assisted analysis of leaked datasets, documents, and communications archives — without exposing sources to cloud infrastructure."
     url: "/portfolio/stringboard/"
     btn_label: "Read More"
     btn_class: "btn--primary"

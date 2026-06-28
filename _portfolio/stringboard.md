@@ -5,9 +5,6 @@ header:
   teaser: /assets/images/stringboard-thumb.jpg
 ---
 
-# Stringboard
-## Secure Investigative Journalism Toolkit
-
 Empowering journalists to uncover truth in massive datasets without compromising source protection.
 
 ## The Problem

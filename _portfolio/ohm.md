@@ -5,9 +5,6 @@ header:
   teaser: /assets/images/ohm-thumb.jpg
 ---
 
-# Open Hardware Manager (OHM)
-## Infrastructure for Manufacturing Resilience
-
 Building the coordination systems that activate distributed manufacturing when centralized supply chains fail.
 
 ## The Problem

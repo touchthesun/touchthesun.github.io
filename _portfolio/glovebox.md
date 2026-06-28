@@ -6,9 +6,6 @@ header:
   teaser: /assets/images/glovebox-thumb.jpg
 ---
 
-# Glovebox
-## MCP Server for Privacy-Preserving AI Analysis
-
 An open-source MCP server that gives language models controlled access to sensitive files — returning metadata and aggregates only, never raw content.
 
 ## The Problem

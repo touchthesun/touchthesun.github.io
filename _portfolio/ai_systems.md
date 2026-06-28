@@ -6,9 +6,6 @@ header:
   teaser: /assets/images/ai-thumb.jpg
 ---
 
-# Production AI Systems
-## Enterprise GenAI Solutions
-
 Translating AI research into production value at scale.
 
 ## Case studies (anonymized)

@@ -6,9 +6,6 @@ header:
   teaser: /assets/images/ai-tooling-thumb.jpg
 ---
 
-# AI Developer Tooling
-## Open-Source Tools and Skills for AI-Assisted Development
-
 A collection of tools and agent skills developed from practical experience building production AI systems — focused on making AI coding agents faster, more precise, and less wasteful.
 
 ## repo-map
@@ -27,15 +24,91 @@ For repos over 100 files, the tool generates an agent navigation guide, prioriti
 
 Integrates via symlink with Cursor and Claude Code. Designed as a lightweight complement to deeper architectural analysis tools — fast enough to run on every session start.
 
+### Example output
+
+Running `repo-map --full --enrich-python` on the Glovebox codebase (65 source files) produces a structured map agents navigate with `grep`, not by reading end-to-end:
+
+```
+# Repository map: glovebox
+
+## How agents should use this map
+Do not read this file end-to-end. Locate targets with grep, then read a
+small line range around matches. Open real source for implementation detail.
+
+## Quick index
+| Section                    | Start line | End line |
+|----------------------------|------------|----------|
+| Code intelligence catalog  | 49         | 1164     |
+| Directory tree             | 1165       | 1523     |
+
+### Top-level directories
+- `tests/`   — 22 files
+- `src/`     — 21 files
+- `harness/` — 11 files
+- `scripts/` —  9 files
+
+---
+
+## src/glovebox/config.py
+> Configuration for a Glovebox server.
+Classes: GloveboxConfig (warnings, from_env)
+
+## src/glovebox/server.py
+> FastMCP stdio server for glovebox tools.
+Exports: build_mcp, main
+Definitions: _AUDIT_METRIC_KEYS, glovebox_list, glovebox_stat,
+             glovebox_search, glovebox_aggregate, build_mcp, main
+
+## src/glovebox/budget.py
+> Per-session query budget. Search is a disclosure oracle: repeated
+> calls can reconstruct content. SessionBudget caps total queries.
+Classes: Decision, SessionBudget (check_and_consume)
+
+## src/glovebox/disclosure.py
+> Statistical-disclosure limiting for counts (threat-model §5.2).
+Exports: below_min_cell, bucket_label, suppressed, count_fields, below_min_file
+
+## src/glovebox/paths.py
+> Resolve user-supplied relative paths strictly under the glovebox mount.
+Classes: PathEscapeError, FileResolutionError
+Functions: resolve_under_root(), resolve_file_under_root()
+
+## src/glovebox/tools/
+├── aggregate.py   — glovebox_aggregate_impl()
+├── list_dir.py    — glovebox_list_impl()
+├── search.py      — glovebox_search_impl()
+└── stat_path.py   — glovebox_stat_impl()
+
+## tests/adversarial/
+├── test_output_bounds.py  — output size and aggregate edge cases
+├── test_path_abuse.py     — path traversal and normalization abuse
+├── test_search_abuse.py   — regex and search edge cases
+└── test_symlink_escape.py — symlink escape out of mount (threat-model §5.6)
+```
+
+The full map for Glovebox runs ~1,500 lines and takes under 3 seconds to generate. An agent starting a session `grep`s for the module it needs and reads 30–50 lines rather than consuming the whole codebase.
+
 ## Claude Code Skills
 
-A set of reusable [Claude Code skills](https://docs.anthropic.com/en/docs/claude-code/skills) developed for recurring patterns in software work:
+A set of reusable [Claude Code skills](https://docs.anthropic.com/en/docs/claude-code/skills) developed for recurring patterns in software work. Each encodes a specific approach to a problem that keeps coming back.
 
-**backpass** — Two-pass coding rhythm. Forward pass solves the problem; backward pass strips the result to its essential form — removing dead code, collapsing over-abstraction, simplifying control flow. Guards against the overbuild tendency in agentic coding sessions.
+### backpass
 
-**renovate** — Systematic cleanup for inherited or messy codebases. Map → cover → clean, module by module. Structured to avoid breaking things while improving them, with coverage gates before each cleanup pass.
+AI coding agents tend to overbuild. Given a task, they'll solve it — and then add error handling for cases that can't happen, abstract the three-line function into a framework, and leave behind speculative parameters for callers that don't exist. The forward pass produces working code; the backward pass is how you get *good* code.
 
-**scaffold-setup-skill** — Generates a repo-embedded setup skill for a software project, creating a natural language interface for onboarding and configuration tasks.
+backpass enforces a two-phase rhythm: write the solution without worrying about elegance, then systematically review every modified file for dead code, one-call abstractions, verbose conditionals, and interfaces that are more public than they need to be. The constraint is strict — the backward pass changes form, not behavior. Tests must pass before and after each pass. New features discovered during review are deferred. The result is code that solved the stated problem and nothing else.
+
+### renovate
+
+Taking over an unfamiliar or neglected codebase is one of the riskier things you can do in software. The temptation is to start refactoring immediately, which is how you break things you don't understand yet. Renovate imposes a discipline: map before you touch, cover before you clean.
+
+The workflow runs in five phases — triage, map (using repo-map), audit test coverage, write characterization tests for any uncovered modules, then refactor one module at a time. Characterization tests capture current behavior including bugs, which are flagged but not fixed during the clean pass. No new features, no bug fixes, no advancing to the next module until the test suite passes. The output is a cleaned codebase and a clear list of what was found along the way.
+
+### scaffold-setup-skill
+
+Every project has the same onboarding problem: someone new needs to get the environment running, and the documentation is either missing, stale, or assumes context they don't have. scaffold-setup-skill generates a repo-embedded natural language setup wizard by reading the actual configuration files, dependency manifests, and infrastructure definitions in the repository — then producing a SKILL.md that walks through discovery, configuration, and verification in plain language.
+
+The generated skill lives at `.claude/skills/setup/SKILL.md` and is designed to be maintained alongside the code. The goal is to make "how do I get this running" answerable without a synchronous call to someone who already knows.
 
 ## Source
 
