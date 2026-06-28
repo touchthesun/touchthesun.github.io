@@ -2,8 +2,6 @@
 title: "AI Developer Tooling"
 excerpt: "Open-Source Tools and Skills for AI-Assisted Development"
 permalink: /portfolio/ai-tooling/
-header:
-  teaser: /assets/images/ai-tooling-thumb.jpg
 ---
 
 A collection of tools and agent skills developed from practical experience building production AI systems — focused on making AI coding agents faster, more precise, and less wasteful.

@@ -28,16 +28,12 @@ feature_row:
     url: "/portfolio/ai-systems/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/glovebox-thumb.jpg
-    alt: "Glovebox"
-    title: "Glovebox"
+  - title: "Glovebox"
     excerpt: "Open-source MCP server for privacy-preserving AI analysis. Models get metadata and aggregates — never raw content. Available on PyPI."
     url: "/portfolio/glovebox/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/ai-tooling-thumb.jpg
-    alt: "AI Developer Tooling"
-    title: "AI Developer Tooling"
+  - title: "AI Developer Tooling"
     excerpt: "repo-map: Tree-sitter-based codebase comprehension for AI agents. Plus a collection of Claude Code skills for cleaner agentic development."
     url: "/portfolio/ai-tooling/"
     btn_label: "Read More"
