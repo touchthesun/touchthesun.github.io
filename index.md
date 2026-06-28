@@ -7,23 +7,17 @@ excerpt: "Cloud Architect & Systems Builder<br/>Building systems that matter: pr
 intro:
   - excerpt: 'From emergency medicine to cloud infrastructure, I solve complex problems in high-stakes environments where failure has consequences.'
 feature_row:
-  - image_path: /assets/images/stringboard-thumb.jpg
-    alt: "Stringboard"
-    title: "Stringboard"
+  - title: "Stringboard"
     excerpt: "Local-first platform for data journalism. Journalists get AI-assisted analysis of leaked datasets, documents, and communications archives — without exposing sources to cloud infrastructure."
     url: "/portfolio/stringboard/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/ohm-thumb.jpg
-    alt: "Open Hardware Manager"
-    title: "Open Hardware Manager"
+  - title: "Open Hardware Manager"
     excerpt: "Infrastructure for manufacturing resilience. Universal data standards, automated matching, supply chain coordination."
     url: "/portfolio/ohm/"
     btn_label: "Read More"
     btn_class: "btn--primary"
-  - image_path: /assets/images/ai-thumb.jpg
-    alt: "Production AI Systems"
-    title: "Production AI Systems"
+  - title: "Production AI Systems"
     excerpt: "Enterprise GenAI solutions. 12+ production deployments, $4.5M revenue impact, 97% CSAT across healthcare, SaaS, fintech."
     url: "/portfolio/ai-systems/"
     btn_label: "Read More"

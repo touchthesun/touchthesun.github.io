@@ -1,8 +1,6 @@
 ---
 title: "Open Hardware Manager"
 excerpt: "Infrastructure for Manufacturing Resilience"
-header:
-  teaser: /assets/images/ohm-thumb.jpg
 ---
 
 Building the coordination systems that activate distributed manufacturing when centralized supply chains fail.

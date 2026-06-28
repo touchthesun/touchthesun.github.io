@@ -65,4 +65,4 @@ Requires Python 3.11+. Integrates with any MCP client: Claude Desktop, Cursor, a
 
 ---
 
-This is the reference implementation of the MCP-style privacy boundary described in [Privacy-preserving MCP-style agents for investigative datasets](/posts/2026-04-14-stringboard-mcp-privacy-architecture/). The architecture is general-purpose — Stringboard uses the same pattern, but Glovebox is designed to be dropped into any environment where a model needs to assist with sensitive data without seeing it.
+This is the reference implementation of the MCP-style privacy boundary described in [Privacy-preserving MCP-style agents for investigative datasets](/architecture/2026/04/14/stringboard-mcp-privacy-architecture/). The architecture is general-purpose — Stringboard uses the same pattern, but Glovebox is designed to be dropped into any environment where a model needs to assist with sensitive data without seeing it.

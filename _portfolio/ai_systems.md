@@ -2,8 +2,6 @@
 title: "Production AI Systems"
 excerpt: "Enterprise GenAI Solutions"
 permalink: /portfolio/ai-systems/
-header:
-  teaser: /assets/images/ai-thumb.jpg
 ---
 
 Translating AI research into production value at scale.

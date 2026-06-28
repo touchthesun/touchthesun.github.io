@@ -35,7 +35,6 @@ collections:
 
 include:
   - _pages
-  - _portfolio
 
 # Defaults
 defaults:
@@ -58,5 +57,11 @@ plugins:
   - jekyll-feed
   - jekyll-include-cache
   - jekyll-remote-theme
+
+exclude:
+  - notes/
+  - CLAUDE.md
+  - Makefile
+  - "*.sh"
 
 # Homepage uses splash layout (index.md); blog lists posts without paginator.

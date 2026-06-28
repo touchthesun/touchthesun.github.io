@@ -1,8 +1,6 @@
 ---
 title: "Stringboard"
 excerpt: "Secure Investigative Journalism Toolkit"
-header:
-  teaser: /assets/images/stringboard-thumb.jpg
 ---
 
 Empowering journalists to uncover truth in massive datasets without compromising source protection.

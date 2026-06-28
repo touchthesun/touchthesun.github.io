@@ -7,6 +7,10 @@ gem "webrick"
 gem "tzinfo-data"
 gem "wdm", "~> 0.1.0" if Gem.win_platform?
 
+group :development do
+  gem "html-proofer"
+end
+
 # If you have any plugins, put them here!
 group :jekyll_plugins do
   gem "jekyll-sitemap"
