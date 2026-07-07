@@ -77,10 +77,15 @@ export const portfolioProjects: PortfolioProject[] = [
     excerpt:
       "Local-first platform for data journalism. AI-assisted analysis of leaked datasets without exposing sources to cloud infrastructure.",
     pillar: "press-freedom",
-    status: "Private beta",
+    status: "Beta",
     heroMetric: "Privacy-preserving AI toolkit; beta with investigative journalists; EFF Director interest",
     featured: true,
     links: [
+      {
+        label: "Source",
+        url: "https://gitlab.com/stringboard/stringboard",
+        external: true,
+      },
       {
         label: "Architecture writeup",
         url: "/blog/stringboard-mcp-privacy-architecture/",
@@ -110,6 +115,10 @@ export const portfolioProjects: PortfolioProject[] = [
         url: "https://hub.docker.com/r/touchthesun/openhardwaremanager",
         external: true,
       },
+      {
+        label: "Docker release post",
+        url: "/blog/ohm-docker/",
+      },
     ],
   },
   {
@@ -123,6 +132,11 @@ export const portfolioProjects: PortfolioProject[] = [
       {
         label: "Discuss case studies",
         url: "/contact/",
+      },
+      {
+        label: "Training materials",
+        url: "https://gitlab.com/maker-nathan/ai-training-and-threat-modeling",
+        external: true,
       },
     ],
   },
@@ -143,6 +157,11 @@ export const portfolioProjects: PortfolioProject[] = [
       {
         label: "Source",
         url: "https://gitlab.com/maker-nathan/glovebox",
+        external: true,
+      },
+      {
+        label: "Docker Hub",
+        url: "https://hub.docker.com/r/touchthesun/glovebox",
         external: true,
       },
       {

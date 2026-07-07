@@ -51,7 +51,7 @@ uv tool install mcp-glovebox      # uv
 Or via Docker (linux/amd64 and linux/arm64):
 
 ```bash
-docker pull maker-nathan/mcp-glovebox
+docker pull touchthesun/glovebox:0.3.0
 ```
 
 Requires Python 3.11+. Integrates with any MCP client: Claude Desktop, Cursor, and custom toolchains.
