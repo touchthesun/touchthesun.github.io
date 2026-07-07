@@ -54,10 +54,10 @@ REST API, CLI tool (`ohm` command), Python library - 27 services across 7 comman
 ## Technical Architecture
 
 **Component-Based Design:**
-- `OHM.generation`: Unstructured input → normalized OKH/OKW formats
-- `OHM.analysis`: Extract requirements and capabilities
-- `OHM.matching`: Connect requirements to facilities at scale
-- `OHM.packaging`: Build and distribute complete projects
+- `generation`: Unstructured input → normalized OKH/OKW formats
+- `analysis`: Extract requirements and capabilities
+- `matching`: Connect requirements to facilities at scale
+- `packaging`: Build and distribute complete projects
 
 **Tech Stack:** Python | FastAPI | Pydantic | LangChain | Docker | Azure Blob Storage
 
@@ -65,7 +65,7 @@ REST API, CLI tool (`ohm` command), Python library - 27 services across 7 comman
 
 **Published and Seeking Adoption**
 
-The system is complete and functional. Standards are published. OHM v0.8.4 is available on Docker Hub ([touchthesun/openhardwaremanager](https://hub.docker.com/r/touchthesun/openhardwaremanager)) with multi-architecture images (linux/amd64 and linux/arm64). Now focused on adoption through conference presentations, documentation, and community building.
+The system is complete and functional. Standards are published. OHM v0.8.8 is available on Docker Hub ([touchthesun/openhardwaremanager](https://hub.docker.com/r/touchthesun/openhardwaremanager)) with multi-architecture images (linux/amd64 and linux/arm64). Now focused on adoption through conference presentations, documentation, and community building.
 
 **Why This Matters:**
 
