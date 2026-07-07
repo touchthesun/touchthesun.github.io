@@ -1,27 +1,54 @@
-# Minimal Mistakes remote theme starter
+# maker-nathan.dev
 
-Click [**Use this template**](https://github.com/mmistakes/mm-github-pages-starter/generate) button above for the quickest method of getting started with the [Minimal Mistakes Jekyll theme](https://github.com/mmistakes/minimal-mistakes).
+Personal portfolio and blog for Nathan Parker — built with Next.js and deployed on Vercel.
 
-Contains basic configuration to get you a site with:
+## Development
 
-- Sample posts.
-- Sample top navigation.
-- Sample author sidebar with social links.
-- Sample footer links.
-- Paginated home page.
-- Archive pages for posts grouped by year, category, and tag.
-- Sample about page.
-- Sample 404 page.
-- Site wide search.
+```bash
+npm install
+npm run dev
+```
 
-Replace sample content with your own and [configure as necessary](https://mmistakes.github.io/minimal-mistakes/docs/configuration/).
+Open [http://localhost:3000](http://localhost:3000).
 
----
+## Commands
 
-## Troubleshooting
+```bash
+npm run dev      # local dev server with Turbopack
+npm run build    # production build
+npm run start    # serve production build
+npm run lint     # ESLint
+```
 
-If you have a question about using Jekyll, start a discussion on the [Jekyll Forum](https://talk.jekyllrb.com/) or [StackOverflow](https://stackoverflow.com/questions/tagged/jekyll). Other resources:
+## Structure
 
-- [Ruby 101](https://jekyllrb.com/docs/ruby-101/)
-- [Setting up a Jekyll site with GitHub Pages](https://jekyllrb.com/docs/github-pages/)
-- [Configuring GitHub Metadata](https://github.com/jekyll/github-metadata/blob/master/docs/configuration.md#configuration) to work properly when developing locally and avoid `No GitHub API authentication could be found. Some fields may be missing or have incorrect data.` warnings.
+- **`app/`** — Next.js App Router pages and layouts
+- **`components/`** — React components (Header, Footer, Markdown, etc.)
+- **`content/`** — Markdown content (portfolio, blog, pages)
+- **`lib/`** — Site config, content loader, metadata helpers
+- **`public/`** — Static assets
+- **`notes/`** — Planning notes (not deployed)
+
+## Content
+
+- Portfolio projects: `content/portfolio/*.md`
+- Blog posts: `content/blog/*.md`
+- Static pages: `content/pages/*.md`
+- Site config and nav: `lib/site-config.ts`
+
+## Deployment
+
+Deployed on [Vercel](https://vercel.com). Custom domain: `maker-nathan.dev`.
+
+### First-time Vercel setup
+
+1. Push this repo to GitHub
+2. Import the repo at [vercel.com/new](https://vercel.com/new)
+3. Vercel auto-detects Next.js — no build config needed
+4. Add custom domain `maker-nathan.dev` in Vercel project settings
+5. Update DNS: point `maker-nathan.dev` to Vercel (A record `76.76.21.21` or CNAME `cname.vercel-dns.com`)
+6. Disable GitHub Pages for this repo once Vercel is live
+
+### Permalink redirects
+
+Legacy Jekyll blog URLs (`/architecture/YYYY/MM/DD/slug/`) redirect to `/blog/slug/` via `next.config.ts`.

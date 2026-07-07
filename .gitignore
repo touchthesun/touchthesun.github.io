@@ -1,10 +1,26 @@
 _site
 .sass-cache
 .jekyll-metadata
-Gemfile.lock
 .DS_Store
 
 # development files
 notes/
 .claude/
 claude.md
+
+# Next.js
+node_modules/
+.next/
+out/
+.vercel
+
+# env
+.env*.local
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# typescript
+*.tsbuildinfo
