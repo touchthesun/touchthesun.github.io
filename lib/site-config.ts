@@ -100,11 +100,16 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "ohm",
     title: "Open Hardware Manager",
     excerpt:
-      "Infrastructure for manufacturing resilience. Universal data standards, automated matching, supply chain coordination.",
+      "Infrastructure for manufacturing resilience. Universal data standards, automated matching, supply chain coordination — now with a live web frontend.",
     pillar: "manufacturing",
-    status: "v0.8.4",
+    status: "v0.9.0",
     heroMetric: "Coordination infrastructure for 1,800+ maker orgs; 48M medical units produced during COVID-19",
     links: [
+      {
+        label: "Live site",
+        url: "https://www.openhardwaremanager.org/",
+        external: true,
+      },
       {
         label: "GitHub",
         url: "https://github.com/helpfulengineering/supply-graph-ai",
@@ -116,8 +121,8 @@ export const portfolioProjects: PortfolioProject[] = [
         external: true,
       },
       {
-        label: "Docker release post",
-        url: "/blog/ohm-docker/",
+        label: "Frontend launch post",
+        url: "/blog/ohm-frontend-launch/",
       },
     ],
   },

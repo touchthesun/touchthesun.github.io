@@ -49,7 +49,7 @@ Build, verify, and distribute complete hardware packages with all dependencies, 
 Quality levels (hobby, professional, medical) with standards compliance checking (ISO 9001, ISO 13485, etc.)
 
 **Multiple Access Methods**  
-REST API, CLI tool (`ohm` command), Python library - 27 services across 7 command groups
+Web UI at [openhardwaremanager.org](https://www.openhardwaremanager.org/), REST API, CLI tool (`ohm` command), Python library - 27 services across 7 command groups
 
 ## Technical Architecture
 
@@ -63,9 +63,9 @@ REST API, CLI tool (`ohm` command), Python library - 27 services across 7 comman
 
 ## Current Status & Impact
 
-**Published and Seeking Adoption**
+**Published, Live, and Seeking Adoption**
 
-The system is complete and functional. Standards are published. OHM v0.8.8 is available on Docker Hub ([touchthesun/openhardwaremanager](https://hub.docker.com/r/touchthesun/openhardwaremanager)) with multi-architecture images (linux/amd64 and linux/arm64). Now focused on adoption through conference presentations, documentation, and community building.
+The system is complete and functional. Standards are published. OHM v0.9.0 is live at [openhardwaremanager.org](https://www.openhardwaremanager.org/) - browse designs, run a match, and open the resulting supply tree in the browser, no Docker or CLI required. The image is also available on Docker Hub ([touchthesun/openhardwaremanager](https://hub.docker.com/r/touchthesun/openhardwaremanager)) with multi-architecture images (linux/amd64 and linux/arm64). A new partnership with [Maps of Making](https://mapsofmaking.org/) now brings their network of facilities directly into the matching engine as candidates alongside your own facility data, widening the pool of capacity OHM can search against. Now focused on adoption through conference presentations, documentation, and community building.
 
 **Why This Matters:**
 
@@ -77,6 +77,10 @@ Infrastructure work is unglamorous, unfunded, and necessary. Supply chain resili
 - Field Ready - humanitarian deployment expertise
 - University of Bath - research partnership
 - EU mAkE Project - African/European makerspace infrastructure
+- [Maps of Making](https://mapsofmaking.org/) - facility network integration, live in v0.9.0
+
+**Emerging Partnerships:**
+Early-stage conversations are underway with [DMDM](https://dmdm.icu/) (Distributed Medical Device Manufacturing - FDA-registered, producing tourniquets for Sudan and Gaza) and [GOSQAS](https://gosqas.org/about) (Global Open Source Quality Assurance System, part of Public Invention - open-source closed-loop tracking for humanitarian supply chains). Both are exactly the kind of distributed, humanitarian-facing manufacturing this project exists to support.
 
 ## The Vision
 
@@ -95,6 +99,7 @@ The infrastructure exists now. The coordination layer is being built. The next c
 
 ## Get Involved
 
+**For anyone:** [Try the live site](https://www.openhardwaremanager.org/) — browse designs, run a match, no setup required.  
 **For Developers:** [Contribute on GitHub](https://github.com/helpfulengineering/supply-graph-ai) — reference implementation for OpenKnowHow / OpenKnowWhere-style coordination.  
 **For makers & organizations:** Context and community pathways through the [Open Source Hardware Association](https://www.oshwa.org/), [Internet of Production Alliance](https://internetofproduction.org/), and [Field Ready](https://fieldready.org/).
 
