@@ -14,7 +14,6 @@ export type PortfolioProject = {
   status?: string;
   heroMetric?: string;
   links: ProjectLink[];
-  featured?: boolean;
 };
 
 export type NavItem = {
@@ -31,7 +30,7 @@ export const site = {
   bio: "Cloud Architect & Systems Builder. Building systems that protect press freedom and enable manufacturing resilience.",
   location: "Tacoma, WA",
   currently:
-    "Senior Cloud Architect & Forward Deployed Engineer at DoIT International. Building Stringboard, open hardware coordination infrastructure, and production agentic AI systems.",
+    "Senior Cloud Architect & Forward Deployed Engineer at DoIT International. Building Open Hardware Manager, Stringboard, and production agentic AI systems.",
   github: "https://github.com/touchthesun",
   gitlab: "https://gitlab.com/maker-nathan",
   linkedin: "https://linkedin.com/in/maker-nathan",
@@ -51,16 +50,16 @@ export const navigation: NavItem[] = [
 
 export const pillars = [
   {
-    id: "press-freedom" as const,
-    title: "Press Freedom",
-    hook: "Journalists need secure tools to investigate corruption without compromising sources.",
-    project: "Stringboard",
-  },
-  {
     id: "manufacturing" as const,
     title: "Manufacturing Resilience",
     hook: "When supply chains collapse, distributed capacity exists but lacks coordination.",
     project: "Open Hardware Manager",
+  },
+  {
+    id: "press-freedom" as const,
+    title: "Press Freedom",
+    hook: "Journalists need secure tools to investigate corruption without compromising sources.",
+    project: "Stringboard",
   },
   {
     id: "commercial-ai" as const,
@@ -72,38 +71,13 @@ export const pillars = [
 
 export const portfolioProjects: PortfolioProject[] = [
   {
-    slug: "stringboard",
-    title: "Stringboard",
-    excerpt:
-      "Local-first platform for data journalism. AI-assisted analysis of leaked datasets without exposing sources to cloud infrastructure.",
-    pillar: "press-freedom",
-    status: "Beta",
-    heroMetric: "Privacy-preserving AI toolkit; beta with investigative journalists; EFF Director interest",
-    featured: true,
-    links: [
-      {
-        label: "Source",
-        url: "https://gitlab.com/stringboard/stringboard",
-        external: true,
-      },
-      {
-        label: "Architecture writeup",
-        url: "/blog/stringboard-mcp-privacy-architecture/",
-      },
-      {
-        label: "Request beta access",
-        url: "mailto:nathan@makernet.work",
-      },
-    ],
-  },
-  {
     slug: "ohm",
     title: "Open Hardware Manager",
     excerpt:
       "Infrastructure for manufacturing resilience. Universal data standards, automated matching, supply chain coordination — now with a live web frontend.",
     pillar: "manufacturing",
-    status: "v0.9.0",
-    heroMetric: "Coordination infrastructure for 1,800+ maker orgs; 48M medical units produced during COVID-19",
+    status: "v0.9.0 · Active development",
+    heroMetric: "1,800+ maker orgs coordinated; 48M medical units produced during COVID-19",
     links: [
       {
         label: "Live site",
@@ -127,10 +101,34 @@ export const portfolioProjects: PortfolioProject[] = [
     ],
   },
   {
+    slug: "stringboard",
+    title: "Stringboard",
+    excerpt:
+      "Local-first platform for data journalism. AI-assisted analysis of leaked datasets without exposing sources to cloud infrastructure.",
+    pillar: "press-freedom",
+    status: "Beta",
+    heroMetric: "In beta with investigative journalists; EFF Director interest",
+    links: [
+      {
+        label: "Source",
+        url: "https://gitlab.com/stringboard/stringboard",
+        external: true,
+      },
+      {
+        label: "Architecture writeup",
+        url: "/blog/stringboard-mcp-privacy-architecture/",
+      },
+      {
+        label: "Request beta access",
+        url: "mailto:nathan@makernet.work",
+      },
+    ],
+  },
+  {
     slug: "ai-systems",
     title: "Production AI Systems",
     excerpt:
-      "Enterprise GenAI solutions. 12+ production deployments, $4.5M revenue impact, 97% CSAT across healthcare, SaaS, fintech.",
+      "Enterprise GenAI built for real production constraints — healthcare, SaaS, and fintech systems that had to survive contact with actual users.",
     pillar: "commercial-ai",
     heroMetric: "12+ production deployments; $4.5M revenue impact; 97% CSAT",
     links: [
@@ -152,7 +150,7 @@ export const portfolioProjects: PortfolioProject[] = [
       "Open-source MCP server for privacy-preserving AI analysis. Models get metadata and aggregates — never raw content.",
     pillar: "press-freedom",
     status: "v0.3.0",
-    heroMetric: "Open-source MCP server; pip install mcp-glovebox",
+    heroMetric: "Four tools, one boundary; Adversarial suite tests every escape path; pip install mcp-glovebox",
     links: [
       {
         label: "PyPI",
@@ -179,9 +177,9 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "ai-tooling",
     title: "AI Developer Tooling",
     excerpt:
-      "repo-map: Tree-sitter-based codebase comprehension for AI agents. Plus Claude Code skills for cleaner agentic development.",
+      "repo-map: codebase comprehension agents can grep instead of reading whole. lesson: turns a correction into an enforceable hook, lint rule, or skill so the same mistake can't recur. Plus more Claude Code skills for cleaner agentic development.",
     pillar: "tooling",
-    heroMetric: "repo-map + Claude Code skills for agentic development",
+    heroMetric: "Tree-sitter tag extraction, no LLM calls; 1,500-line map in under 3 seconds; MIT licensed",
     links: [
       {
         label: "Source",

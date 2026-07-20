@@ -44,6 +44,18 @@ export default async function PortfolioDetailPage({ params }: Props) {
           {project.title}
         </h1>
         <p className="mt-3 text-lg text-zinc-400">{project.excerpt}</p>
+        {project.heroMetric && (
+          <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 border-t border-zinc-800 pt-4 text-sm text-zinc-400">
+            {project.heroMetric.split(";").map((metric) => (
+              <li
+                key={metric}
+                className="flex items-center gap-2 before:h-1 before:w-1 before:rounded-full before:bg-amber-400/70 before:content-['']"
+              >
+                {metric.trim()}
+              </li>
+            ))}
+          </ul>
+        )}
       </header>
 
       <ProjectActions links={project.links} status={project.status} />

@@ -1,6 +1,6 @@
 ---
 title: AI Developer Tooling
-description: repo-map and Claude Code skills for faster, more precise agentic development.
+description: repo-map, lesson, and Claude Code skills for faster, more precise agentic development.
 ---
 
 
@@ -101,6 +101,16 @@ backpass enforces a two-phase rhythm: write the solution without worrying about 
 Taking over an unfamiliar or neglected codebase is one of the riskier things you can do in software. The temptation is to start refactoring immediately, which is how you break things you don't understand yet. Renovate imposes a discipline: map before you touch, cover before you clean.
 
 The workflow runs in five phases — triage, map (using repo-map), audit test coverage, write characterization tests for any uncovered modules, then refactor one module at a time. Characterization tests capture current behavior including bugs, which are flagged but not fixed during the clean pass. No new features, no bug fixes, no advancing to the next module until the test suite passes. The output is a cleaned codebase and a clear list of what was found along the way.
+
+### lesson
+
+Correcting an agent is cheap and forgettable. The correction lands, the turn ends, and the same mistake shows up next week in a different repo. The signal is already there in every session — it just evaporates. lesson catches it and converts it into an artifact that makes the mistake structurally impossible to repeat.
+
+The core idea is an enforceability ladder, tried top-down: a **hook** if the rule is a deterministic condition on a tool call or file path (the litmus test — could a shell script read the tool input and decide pass/fail with no judgment?), a **lint rule or test** if it's a code-level invariant, a **skill** if it's a multi-step procedure being reinvented in chat, and a **rule-line** in `CLAUDE.md` only for judgment that genuinely resists mechanization. The rule-line is the explicit fallback, not the default — the failure mode this design fights is writing prose nobody enforces when a five-line hook would have blocked the thing outright.
+
+Scope defaults to the narrowest correct one: project before global. Cross-repo relevance is a trap, since a lesson that's true in one repo is frequently wrong in the next. Promotion to global is opt-in and evidence-driven.
+
+Every lesson appends a row to a ledger, which is what makes the system self-improving rather than accumulating. A near-duplicate bumps a `hits` counter instead of adding noise, and when a rule-line reaches three hits it triggers promotion — the skill proposes the concrete hook or test that would have made it impossible. A periodic review pass runs the other direction too, flagging hooks that never fired and rule-lines that never recurred as deletion candidates. A mistake corrected once should become progressively impossible; a guardrail that never fires should be deleted before it becomes ignorable noise.
 
 ### scaffold-setup-skill
 
