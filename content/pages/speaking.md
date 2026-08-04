@@ -12,6 +12,20 @@ More recently my speaking has expanded into AI systems design, security in agent
 
 ## Previous Talks
 
+### FAB26
+**Cambridge / MIT · July 2026**
+
+Presented Open Hardware Manager to the international fab lab community at the annual Fab Lab Conference & Symposium, hosted across MIT and the Greater Boston area. Walked through how OHM matches open hardware designs to real workshops, why federation matters for manufacturing sovereignty, and what it takes to make “who can make this?” a practical question rather than a research project.
+
+### Global Innovation Gathering — Community Call
+**July 2026**
+
+*Open Hardware Manager: Connecting Designs to Distributed Manufacturing*
+
+Returned to the GIG network to walk through four years of OHM development — from Kathmandu and early standards work through the COVID coordination gap to a live, federated matching engine. Covered the five-layer model (standards → tools → engine → services → platform), Maps of Making integration, and an open invitation for beta node operators.
+
+[Read the GIG writeup →](https://globalinnovationgathering.org/2026/08/03/open-hardware-manager-nathan-parker/)
+
 ### Open Hardware Summit 2026
 **Berlin, Germany · May 2026**
 

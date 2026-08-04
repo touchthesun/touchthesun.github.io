@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FeaturedProject } from "@/components/featured-project";
 import { ProjectCard } from "@/components/project-card";
 import { pillars, portfolioProjects, site } from "@/lib/site-config";
 import { createMetadata } from "@/lib/metadata";
@@ -8,6 +9,9 @@ export const metadata = createMetadata({
 });
 
 export default function HomePage() {
+  const featured = portfolioProjects.find((p) => p.featured);
+  const rest = portfolioProjects.filter((p) => !p.featured);
+
   return (
     <div className="space-y-16">
       <section className="space-y-6">
@@ -40,10 +44,11 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section>
-        <h2 className="mb-6 text-2xl font-semibold text-zinc-50">Projects</h2>
+      <section className="space-y-6">
+        <h2 className="text-2xl font-semibold text-zinc-50">Projects</h2>
+        {featured && <FeaturedProject project={featured} />}
         <div className="grid gap-6 sm:grid-cols-2">
-          {portfolioProjects.map((project) => (
+          {rest.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}
         </div>

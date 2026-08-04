@@ -1,106 +1,78 @@
 ---
 title: Open Hardware Manager
-description: Infrastructure for manufacturing resilience and distributed supply chain coordination.
+description: Who can make this? Infrastructure that matches open hardware designs to real workshops — federated, not centralized.
 ---
 
 
-Building the coordination systems that activate distributed manufacturing when centralized supply chains fail.
+Open Hardware Manager answers one question: **who can make this?** Then it gets out of the way. The conversation that follows happens between you and the workshop — OHM is not a marketplace, a shop, or a broker.
 
 ## The Problem
 
-**COVID-19 revealed a critical gap in manufacturing infrastructure.**
+Open hardware has a licensing story and a publishing story. What it does not have is a manufacturing story.
 
-When centralized supply chains collapsed, 1,800+ maker organizations worldwide produced 48 million medical supply units - proving distributed capacity exists everywhere. Makerspaces, fab labs, small manufacturers stood ready to help.
+A design is released under an open licence. The files are online. Anyone is legally free to build it. And then, in practice, almost nobody does — because finding someone who *can* build it is a research project every single time.
 
-But **70% of volunteer effort went to manual coordination** rather than production:
-- Matching designs to facility capabilities
-- Validating technical specifications
-- Routing materials across networks
-- Aggregating output from hundreds of small producers
-- Quality assurance and standards compliance
+COVID-19 made the cost visible. When centralized supply chains collapsed, 1,800+ maker organizations produced roughly 48 million medical supply units. The capacity existed. Around seventy percent of volunteer effort still went to manual coordination: matching designs to facilities, validating specs, routing materials, aggregating output. Systems built fast under pressure fell apart when volunteers moved on, then got rebuilt from scratch the next crisis.
 
-**The capacity existed. The coordination infrastructure didn't.**
+The next pandemic, natural disaster, or supply chain break will find us just as unprepared — unless the coordination layer already exists.
 
-The next pandemic, natural disaster, or supply chain disruption will find us just as unprepared - unless we build the infrastructure now, before the crisis.
+## Why Standards Aren't Enough
 
-## The Solution
+I co-developed machine-readable standards for this field — [Open Know-How](https://www.openhardwaremanager.org/docs/reference/okh-and-okw/) for designs, Open Know-Where for facilities — with the Open Source Hardware Association, Field Ready, and the University of Bath. Standards alone do not get you far. Nobody manually interacts with a data standard.
 
-**Universal data standards + automated coordination = activatable resilience**
+I think about it as five layers: standards at the base, then single-purpose tools, an engine that wraps those tools into something usable, services that let you query the engine remotely, and finally a platform. Until a project reaches at least the engine layer, it does not matter how good the standard is.
 
-Over three years, I co-developed machine-readable standards for open hardware (OpenKnowHow for designs, OpenKnowWhere for facilities) with the Open Source Hardware Association, Field Ready, and the University of Bath. But standards alone don't solve anything - nobody will manually implement a data standard.
+Open Hardware Manager is that engine.
 
-The Open Hardware Manager is the reference implementation that makes these standards actually useful.
+## What It Actually Does
 
-## Core Capabilities
+OHM keeps structured records of two things: open hardware designs, and real production facilities — makerspaces, fab labs, university workshops, small manufacturers. It works out which facilities can build a given design, and hands you what you need to go ask them.
 
-**Automated Matching**  
-Multi-layered algorithm (exact → heuristic → NLP → AI/ML) that matches hardware requirements with facility capabilities. Given a design, find every capable manufacturer within X distance.
+**Meet people where they already are.** The alternative — demanding every project and workshop adopt a format before they get value — is how you build a system nobody uses. OHM absorbs the mess: point it at a GitHub or GitLab repo and it parses files, documentation, and licensing into a valid Open Know-How manifest. Facility data comes from directories that already exist, starting with [Maps of Making](https://mapsofmaking.org/). Those spaces publish about themselves; OHM is a reader, not a scraper.
 
-**Manifest Generation**  
-4-layer progressive enhancement system converts unstructured project data (GitHub repos, documentation) into machine-readable OKH manifests automatically.
+**Thin manifests, heavy files only when needed.** The manifest is a light JSON record — who made it, how it's made, what it's for, and links out to STLs, DXFs, source. Matching a design against workshops happens against the manifest alone. The full package moves only when someone is ready to build.
 
-**Supply Tree Construction**  
-Maps complete manufacturing solutions: multi-stage dependencies, material sourcing, quality validation, time constraints, resource allocation across networks.
+**Matching that scales past one person's network.** Given a design, find capable manufacturers by capability and geography. Ask who can build a face shield *in France* and you get named workshops with real addresses — not an unhelpfully global list of every space with a 3D printer.
 
-**Package Management**  
-Build, verify, and distribute complete hardware packages with all dependencies, documentation, and validation data.
+## Federation, Not Another Silo
 
-**Domain-Aware Validation**  
-Quality levels (hobby, professional, medical) with standards compliance checking (ISO 9001, ISO 13485, etc.)
+It would be simple to build one more website and ask everyone to upload there. I've watched that pattern fail: projects lose funding, platforms get bought, data ends up with someone nobody trusts.
 
-**Multiple Access Methods**  
-Web UI at [openhardwaremanager.org](https://www.openhardwaremanager.org/), REST API, CLI tool (`ohm` command), Python library - 27 services across 7 command groups
+OHM is built for federation. The software is on [Docker Hub](https://hub.docker.com/r/touchthesun/openhardwaremanager) — pull the image and run your own node on your own hardware today. The hosted site at [openhardwaremanager.org](https://www.openhardwaremanager.org/) is a convenience, not the product. The shape I'm working toward is a mesh: nodes that pass signal to each other so if one goes down the rest heal around it. Same logic for a supply chain of physical goods.
 
-## Technical Architecture
+## Current Status
 
-**Component-Based Design:**
-- `generation`: Unstructured input → normalized OKH/OKW formats
-- `analysis`: Extract requirements and capabilities
-- `matching`: Connect requirements to facilities at scale
-- `packaging`: Build and distribute complete projects
+**Live, documented, not yet at 1.0.**
 
-**Tech Stack:** Python | FastAPI | Pydantic | LangChain | Docker | Azure Blob Storage
+Browse designs, run a match, and open the resulting supply tree in the browser — no Docker or CLI required. Public docs cover the problem, how it works, and how to run your own node. Maps of Making facilities are in the matching pool alongside your own data. My instance currently holds on the order of 170+ designs, from simple printable parts to hard cases like NASA JPL's open-source Mars rover — chosen specifically to prove the system can handle complexity.
 
-## Current Status & Impact
+Before opening broadly to the public I want three things settled: reliable federation between nodes, and working tools for onboarding a new design and a new space. Until then I'm inviting developers and people already fluent in this work as beta testers — not yet the general public.
 
-**Published, Live, and Seeking Adoption**
-
-The system is complete and functional. Standards are published. OHM v0.9.0 is live at [openhardwaremanager.org](https://www.openhardwaremanager.org/) - browse designs, run a match, and open the resulting supply tree in the browser, no Docker or CLI required. The image is also available on Docker Hub ([touchthesun/openhardwaremanager](https://hub.docker.com/r/touchthesun/openhardwaremanager)) with multi-architecture images (linux/amd64 and linux/arm64). A new partnership with [Maps of Making](https://mapsofmaking.org/) now brings their network of facilities directly into the matching engine as candidates alongside your own facility data, widening the pool of capacity OHM can search against. Now focused on adoption through conference presentations, documentation, and community building.
-
-**Why This Matters:**
-
-Infrastructure work is unglamorous, unfunded, and necessary. Supply chain resilience isn't profitable until it's too late. I'm building it anyway because the alternative is preventable deaths during the next crisis.
+**Recent visibility:** Presented at [FAB26](https://fab26.fabevent.org/) (MIT / Cambridge, July 2026) to the international fab lab community; walked the GIG network through four years of work on a [community call](https://globalinnovationgathering.org/2026/07/22/community-call-open-hardware-manager/) with a [writeup from Global Innovation Gathering](https://globalinnovationgathering.org/2026/08/03/open-hardware-manager-nathan-parker/); earlier [Open Hardware Summit 2026](https://www.youtube.com/watch?v=Lr21NQtMSUc) talk on supply chain mesh networks.
 
 **Collaboration:**
-- Internet of Production Alliance (IoPA) - international coordination
-- Open Source Hardware Association (OSHWA) - standards development
-- Field Ready - humanitarian deployment expertise
-- University of Bath - research partnership
-- EU mAkE Project - African/European makerspace infrastructure
-- [Maps of Making](https://mapsofmaking.org/) - facility network integration, live in v0.9.0
+- Internet of Production Alliance (IoPA) — international coordination
+- Open Source Hardware Association (OSHWA) — standards development
+- Field Ready — humanitarian deployment expertise
+- University of Bath — research partnership
+- EU mAkE Project — African/European makerspace infrastructure
+- [Maps of Making](https://mapsofmaking.org/) — facility network integration, live in v0.9.0
 
-**Emerging Partnerships:**
-Early-stage conversations are underway with [DMDM](https://dmdm.icu/) (Distributed Medical Device Manufacturing - FDA-registered, producing tourniquets for Sudan and Gaza) and [GOSQAS](https://gosqas.org/about) (Global Open Source Quality Assurance System, part of Public Invention - open-source closed-loop tracking for humanitarian supply chains). Both are exactly the kind of distributed, humanitarian-facing manufacturing this project exists to support.
+**Emerging:** Early conversations with [DMDM](https://dmdm.icu/) (Distributed Medical Device Manufacturing — FDA-registered, producing tourniquets for Sudan and Gaza) and [GOSQAS](https://gosqas.org/about) (open-source closed-loop tracking for humanitarian supply chains). Both are exactly the kind of distributed, humanitarian-facing manufacturing this project exists to support.
 
 ## The Vision
 
-**Supply Chain Mesh Networks**
+The goal isn't replacing centralized manufacturing — it's creating resilient alternatives that activate when centralized systems fail. Designs publish in machine-readable OKH. Facilities advertise capabilities in OKW. Matching engines route production to available capacity. Networks self-organize without rebuilding the coordination layer from scratch every crisis.
 
-The goal isn't replacing centralized manufacturing - it's creating resilient alternatives that activate when centralized systems fail.
-
-During the next pandemic, natural disaster, or geopolitical disruption:
-- Designs publish in machine-readable OKH format
-- Facilities advertise capabilities in OKW format
-- Matching engines route production to available capacity
-- Supply trees coordinate multi-stage manufacturing
-- Networks self-organize without manual coordination
-
-The infrastructure exists now. The coordination layer is being built. The next crisis will test whether we learned from the last one.
+Everyday use is what makes the network exist when you actually need it. Mutual aid under pressure cannot invent trust, formats, and facility maps while people are waiting.
 
 ## Get Involved
 
-**For anyone:** [Try the live site](https://www.openhardwaremanager.org/) — browse designs, run a match, no setup required.  
-**For Developers:** [Contribute on GitHub](https://github.com/helpfulengineering/supply-graph-ai) — reference implementation for OpenKnowHow / OpenKnowWhere-style coordination.  
-**For makers & organizations:** Context and community pathways through the [Open Source Hardware Association](https://www.oshwa.org/), [Internet of Production Alliance](https://internetofproduction.org/), and [Field Ready](https://fieldready.org/).
+**Try it:** [openhardwaremanager.org](https://www.openhardwaremanager.org/) — browse, match, no setup.  
+**Read the docs:** [What is OHM?](https://www.openhardwaremanager.org/docs/about/what-is-ohm/)  
+**Run a node:** [Docker image](https://hub.docker.com/r/touchthesun/openhardwaremanager) · [Source on GitHub](https://github.com/helpfulengineering/supply-graph-ai)  
+**Community:** [Open Source Hardware Association](https://www.oshwa.org/), [Internet of Production Alliance](https://internetofproduction.org/), [Field Ready](https://fieldready.org/)
+
+If you want to spin up a node and break things once federation tools settle, I want that feedback.
 
 Open Source (MIT) | Maintained by Nathan Parker

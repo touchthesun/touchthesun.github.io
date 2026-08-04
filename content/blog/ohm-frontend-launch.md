@@ -1,6 +1,6 @@
 ---
 title: Open Hardware Manager has a home now — openhardwaremanager.org
-description: v0.9.0 ships the reference frontend as a live public demo, plus OKH-LOSH interop and a Maps of Making facility network integration.
+description: v0.10.7 with full web UI and a Maps of Making facility network integration.
 date: 2026-07-13
 categories: [open hardware]
 tags: [ohm, frontend, open-source, manufacturing]
@@ -9,7 +9,7 @@ tags: [ohm, frontend, open-source, manufacturing]
 
 Open Hardware Manager now has a website: [openhardwaremanager.org](https://www.openhardwaremanager.org/). Browse designs, run a match against the facility network, and open the resulting supply tree — no Docker, no CLI, no reading API docs first. This has been the missing piece since the [Docker Hub release](/blog/ohm-docker/) last month. The system worked, but "pull the image and read the OpenAPI spec" was never going to get anyone but other engineers to try it. Now anyone can.
 
-This shipped alongside v0.9.0, which is the biggest release since I started publishing versioned Docker images. Three things in it are worth calling out.
+This shipped alongside v0.10.7, which is the biggest release since I started publishing versioned Docker images. Three things in it are worth calling out.
 
 ## The frontend is real, not a demo shell
 

@@ -1,7 +1,7 @@
 ---
 title: Open Hardware Manager is now on Docker Hub
-description: OHM v0.8.4 published with multi-architecture Docker images.
-date: 2026-06-28
+description: OHM v0.10.7 published with multi-architecture Docker images.
+date: 2026-08-04
 categories: [open hardware]
 tags: [ohm, docker, open-source, manufacturing]
 ---

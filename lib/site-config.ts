@@ -13,6 +13,7 @@ export type PortfolioProject = {
   pillar: Pillar;
   status?: string;
   heroMetric?: string;
+  featured?: boolean;
   links: ProjectLink[];
 };
 
@@ -74,14 +75,21 @@ export const portfolioProjects: PortfolioProject[] = [
     slug: "ohm",
     title: "Open Hardware Manager",
     excerpt:
-      "Infrastructure for manufacturing resilience. Universal data standards, automated matching, supply chain coordination — now with a live web frontend.",
+      "Who can make this? OHM matches open hardware designs to real workshops — federated nodes you can run yourself, not another central marketplace.",
     pillar: "manufacturing",
-    status: "v0.9.0 · Active development",
-    heroMetric: "1,800+ maker orgs coordinated; 48M medical units produced during COVID-19",
+    status: "v0.10.7 · Live · Docs published",
+    featured: true,
+    heroMetric:
+      "Live at openhardwaremanager.org; Docs + Maps of Making integration; Presented at Fab26 and GIG",
     links: [
       {
         label: "Live site",
         url: "https://www.openhardwaremanager.org/",
+        external: true,
+      },
+      {
+        label: "Docs",
+        url: "https://www.openhardwaremanager.org/docs/about/what-is-ohm/",
         external: true,
       },
       {
@@ -92,6 +100,11 @@ export const portfolioProjects: PortfolioProject[] = [
       {
         label: "Docker Hub",
         url: "https://hub.docker.com/r/touchthesun/openhardwaremanager",
+        external: true,
+      },
+      {
+        label: "GIG article",
+        url: "https://globalinnovationgathering.org/2026/08/03/open-hardware-manager-nathan-parker/",
         external: true,
       },
       {
